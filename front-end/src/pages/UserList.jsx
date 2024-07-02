@@ -61,4 +61,8 @@ export default function UserList() {
     </>
   )
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6be394e31063691134cd8227352e2a951ca55239

@@ -83,4 +83,8 @@ myfetch.delete = async function(path) {
   else throw new HttpError(response.status, getErrorDescription(response))
 }
 
+<<<<<<< HEAD
 export default myfetch
+=======
+export default myfetch
+>>>>>>> 6be394e31063691134cd8227352e2a951ca55239
