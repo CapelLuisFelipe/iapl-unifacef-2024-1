@@ -1,6 +1,10 @@
 import prisma from '../database/client.js'
 import bcrypt from 'bcrypt'
 import { uuidv7 } from 'uuidv7'
+<<<<<<< HEAD
+=======
+import cryptr from '../lib/cryptr.js'
+>>>>>>> parent of c392050 ((23/05) Término da lógica de gerenciamento de autenticação por sessão)
 
 const controller = {}
 
@@ -84,8 +88,15 @@ controller.login = async function(req, res) {
     const sessid = uuidv7()
     await prisma.session.create({ data: { sessid, user_id: user.id } })
 
+<<<<<<< HEAD
     res.cookie(process.env.AUTH_COOKIE_NAME, sessid, {
       httpOnly: true,
+=======
+    // Forma o cookie para enviar ao front-end
+    // O sessid é incluído no cookie de forma criptografada
+    res.cookie(process.env.AUTH_COOKIE_NAME, cryptr.encrypt(sessid), {
+      httpOnly: true,   // O cookie ficará inacessível para JS no front-end
+>>>>>>> parent of c392050 ((23/05) Término da lógica de gerenciamento de autenticação por sessão)
       secure: true,
       sameSite: 'None',
       path: '/',
